@@ -26,4 +26,7 @@ COPY Gemfile.lock /mnt/rails/
 RUN bundle install
 COPY . /mnt/rails
 COPY db/development.sqlite3 /mnt/rails/db/development.sqlite3
+RUN yarn add https://github.com/kobaltz/actiontext
+RUN bundle
+
 EXPOSE 3000
