@@ -20,6 +20,7 @@ Things you may want to cover:
 * How to run the test suite
 ```
 docker-compose build
+docker-compose up -d
 docker-compose run web bash # Opens bash terminal at rails application
 rails s # Open rails console
 
@@ -34,3 +35,8 @@ When you save an Article with some img inserted from your filesystem, there is n
 
 But when you copy img from internet, and paste it the create method went fine, but update is problematic. 
 When you add some text to it or insert another img and save it, the changes are not saved.
+
+- Open `http://172.25.0.3:3000/articles/3`
+- Edit Text or Add some img
+- Save 
+  - No changes are done
