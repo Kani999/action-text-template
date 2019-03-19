@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Testing Rails Action Text with Rails 5.2.2.1
+
+Based on:
+- https://www.driftingruby.com/episodes/using-action-text-in-a-rails-5-2-application
+
+I run into some problem described in the end of this readme 
 
 Things you may want to cover:
 
 * Ruby version
+  - 2.6.2
+* Rails version
+  - 5.2.2.1
 
 * System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+  - npm, yarn, sqlite, node
 
 * How to run the test suite
+```
+docker-compose build
+docker-compose run web bash # Opens bash terminal at rails application
+rails s # Open rails console
 
-* Services (job queues, cache servers, search engines, etc.)
+Test it!
 
-* Deployment instructions
+determite ip of docker container `ip a`
+Open http://172.25.0.2:3000/articles
 
-* ...
+```
+### Problem
+When you save an Article with some img inserted from your filesystem, there is no problem with it.
+
+But when you copy img from internet, and paste it the create method went fine, but update is problematic. 
+When you add some text to it or insert another img and save it, the changes are not saved.
